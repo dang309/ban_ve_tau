@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "taus",
+  "info": {
+    "singularName": "tau",
+    "pluralName": "taus",
+    "displayName": "TAU",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "MaTAU": {
+      "type": "integer",
+      "unique": true
+    },
+    "TenTau": {
+      "type": "string"
+    }
+  }
+}

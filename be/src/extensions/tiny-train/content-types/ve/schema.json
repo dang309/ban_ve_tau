@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ves",
+  "info": {
+    "singularName": "ve",
+    "pluralName": "ves",
+    "displayName": "VE",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "MaVE": {
+      "type": "integer",
+      "unique": true
+    },
+    "Gia": {
+      "type": "integer"
+    },
+    "MACHUYENDI": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::tiny-train.chuyendi"
+    },
+    "MaGHE": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::tiny-train.ghe"
+    }
+  }
+}

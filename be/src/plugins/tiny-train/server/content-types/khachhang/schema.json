@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "khachhangs",
+  "info": {
+    "singularName": "khachhang",
+    "pluralName": "khachhangs",
+    "displayName": "KHACHHANG",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "MaKH": {
+      "type": "integer",
+      "unique": true
+    },
+    "CCCD": {
+      "type": "string",
+      "unique": true
+    },
+    "HoDem": {
+      "type": "string"
+    },
+    "Ten": {
+      "type": "string"
+    },
+    "SDT": {
+      "type": "string"
+    },
+    "NgaySinh": {
+      "type": "date"
+    },
+    "DoiTuong": {
+      "type": "enumeration",
+      "enum": [
+        "Người lớn",
+        "Trẻ em",
+        "Người cao tuổi"
+      ],
+      "default": "Người lớn"
+    }
+  }
+}

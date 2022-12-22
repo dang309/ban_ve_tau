@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "chuyendis",
+  "info": {
+    "singularName": "chuyendi",
+    "pluralName": "chuyendis",
+    "displayName": "CHUYENDI",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "MACHUYENDI": {
+      "type": "integer",
+      "unique": true
+    },
+    "MaTAU": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::tiny-train.tau"
+    },
+    "NgayGioDi": {
+      "type": "datetime"
+    },
+    "NgayGioDen": {
+      "type": "datetime"
+    },
+    "GaDi": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::tiny-train.ga"
+    },
+    "GaDen": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::tiny-train.ga"
+    }
+  }
+}

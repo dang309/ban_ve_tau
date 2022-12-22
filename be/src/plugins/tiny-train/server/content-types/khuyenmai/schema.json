@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "khuyenmais",
+  "info": {
+    "singularName": "khuyenmai",
+    "pluralName": "khuyenmais",
+    "displayName": "KHUYENMAI",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "MaKM": {
+      "type": "integer",
+      "unique": true
+    },
+    "TenKM": {
+      "type": "string"
+    },
+    "TiLeGiam": {
+      "type": "float"
+    },
+    "NgayHetHan": {
+      "type": "datetime"
+    }
+  }
+}

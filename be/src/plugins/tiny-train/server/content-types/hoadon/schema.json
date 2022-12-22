@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "hoadons",
+  "info": {
+    "singularName": "hoadon",
+    "pluralName": "hoadons",
+    "displayName": "HOADON",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "MaNV": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "admin::user"
+    },
+    "MaKH": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::tiny-train.khachhang"
+    },
+    "TongTien": {
+      "type": "float"
+    },
+    "NgayThanhToan": {
+      "type": "date"
+    },
+    "MaHD": {
+      "type": "uid"
+    }
+  }
+}

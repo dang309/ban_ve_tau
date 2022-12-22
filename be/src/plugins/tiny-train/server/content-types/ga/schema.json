@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "gas",
+  "info": {
+    "singularName": "ga",
+    "pluralName": "gas",
+    "displayName": "GA",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "MaGA": {
+      "type": "integer",
+      "unique": true
+    },
+    "TenGa": {
+      "type": "string"
+    },
+    "CuLy": {
+      "type": "float"
+    },
+    "DiaChi": {
+      "type": "string"
+    }
+  }
+}

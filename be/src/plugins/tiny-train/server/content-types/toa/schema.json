@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "toas",
+  "info": {
+    "singularName": "toa",
+    "pluralName": "toas",
+    "displayName": "TOA",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "MaTOA": {
+      "type": "integer",
+      "unique": true
+    },
+    "SoLuongGhe": {
+      "type": "integer"
+    },
+    "LoaiToa": {
+      "type": "enumeration",
+      "enum": [
+        "Ngồi cứng",
+        "Ngồi cứng điều hòa",
+        "Ngồi mềm",
+        "Ngồi mềm điều hòa",
+        "Giường nằm khoang 4 điều hòa",
+        "Giường nằm khoang 6 điều hòa"
+      ]
+    }
+  }
+}

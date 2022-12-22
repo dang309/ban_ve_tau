@@ -1,0 +1,37 @@
+{
+  "name": "be",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A Strapi application",
+  "scripts": {
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi"
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "@chartbrew/plugin-strapi": "^0.4.2",
+    "@strapi/design-system": "^1.4.1",
+    "@strapi/icons": "^1.4.1",
+    "@strapi/plugin-i18n": "4.5.3",
+    "@strapi/strapi": "4.5.3",
+    "moment": "^2.29.4",
+    "mysql": "2.18.1",
+    "qs": "^6.11.0",
+    "react-slick": "^0.29.0",
+    "request": "^2.88.2",
+    "slick-carousel": "^1.8.1"
+  },
+  "author": {
+    "name": "A Strapi developer"
+  },
+  "strapi": {
+    "uuid": "e1805865-3033-47ea-a1b5-21fad3558a7f"
+  },
+  "engines": {
+    "node": ">=14.19.1 <=18.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cthoadons",
+  "info": {
+    "singularName": "cthoadon",
+    "pluralName": "cthoadons",
+    "displayName": "CTHOADON"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "MaHD": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::tiny-train.hoadon"
+    },
+    "MaTOA": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::tiny-train.toa"
+    },
+    "MaKM": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::tiny-train.khuyenmai"
+    },
+    "TienPhaiTra": {
+      "type": "float"
+    },
+    "PhuPhi": {
+      "type": "integer"
+    },
+    "BaoHiem": {
+      "type": "integer"
+    }
+  }
+}

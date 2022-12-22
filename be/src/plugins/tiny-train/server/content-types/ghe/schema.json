@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ghes",
+  "info": {
+    "singularName": "ghe",
+    "pluralName": "ghes",
+    "displayName": "GHE",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "MaGHE": {
+      "type": "integer",
+      "unique": true
+    },
+    "LoaiGhe": {
+      "type": "enumeration",
+      "enum": [
+        "NC",
+        "NCL",
+        "NM",
+        "NML",
+        "ANL",
+        "BNL",
+        "GP"
+      ]
+    },
+    "DienGiai": {
+      "type": "string"
+    }
+  }
+}

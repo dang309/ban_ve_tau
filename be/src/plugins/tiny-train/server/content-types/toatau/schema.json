@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "toataus",
+  "info": {
+    "singularName": "toatau",
+    "pluralName": "toataus",
+    "displayName": "TOATAU"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "MaTOA": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::tiny-train.toa"
+    },
+    "MaTAU": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::tiny-train.tau"
+    },
+    "SoThuTu": {
+      "type": "integer"
+    }
+  }
+}
