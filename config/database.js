@@ -1,13 +1,14 @@
 module.exports = ({ env }) => ({
   connection: {
-    client: 'mysql',
+    client: "mysql",
     connection: {
-      host: env('DATABASE_HOST', '127.0.0.1'),
-      port: env.int('DATABASE_PORT', 3306),
-      database: env('DATABASE_NAME', 'BANVETAUTRUCTUYEN'),
-      user: env('DATABASE_USERNAME', 'root'),
-      password: env('DATABASE_PASSWORD', 'TerMiNaTor_309'),
-      ssl: env.bool('DATABASE_SSL', true),
+      host: env("DATABASE_HOST", "34.124.224.3"),
+      port: env.int("DATABASE_PORT", 3306),
+      database: env("DATABASE_NAME", "BANVETAU"),
+      user: env("DATABASE_USERNAME", "root"),
+      password: env("DATABASE_PASSWORD", "TerMiNaTor_309"),
+      ssl: env.bool("DATABASE_SSL", true),
+      socketPath: `/cloudsql/northern-math-370107:asia-southeast1:uit`,
     },
   },
 });
