@@ -9,7 +9,7 @@ module.exports = {
     try {
       return await strapi
         .plugin("tiny-train")
-        .service("khachhang")
+        .service("phieudatve")
         .find(ctx.query);
     } catch (err) {
       ctx.throw(500, err);
@@ -20,8 +20,19 @@ module.exports = {
     try {
       ctx.body = await strapi
         .plugin("tiny-train")
-        .service("khachhang")
+        .service("phieudatve")
         .create(ctx.request.body);
+    } catch (err) {
+      ctx.throw(500, err);
+    }
+  },
+
+  async findOne(ctx) {
+    try {
+      return await strapi
+        .plugin("tiny-train")
+        .service("phieudatve")
+        .findOne(ctx.params.id, ctx.query);
     } catch (err) {
       ctx.throw(500, err);
     }

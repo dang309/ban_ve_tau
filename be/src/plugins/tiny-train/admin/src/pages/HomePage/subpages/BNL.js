@@ -31,6 +31,10 @@ const BNL = (props) => {
 
                       width: "54px",
                       height: "54px",
+
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
                     }}
                     onClick={() => handleSelectSeat((row + 1) * 6 - col)}
                   >

@@ -8,14 +8,18 @@ import {
   Radio,
   TwoColsLayout,
   IconButton,
+  Button,
+  Link,
 } from "@strapi/design-system";
 
-import { Trash } from "@strapi/icons";
+import { Trash, ArrowLeft } from "@strapi/icons";
 
 import Slider from "react-slick";
 import Seat from "./Seat";
 
-import moment from "moment";
+import SimpleBar from "simplebar-react";
+import Checkout from "./Checkout";
+import PHIEUDATVE from "../../../api/phieudatve";
 
 const settings = {
   dots: false,
@@ -27,11 +31,14 @@ const settings = {
 };
 
 const Trip = (props) => {
-  const { trips, fromStation, toStation, startDate } = props;
+  const { trips, fromStation, toStation, startDate, pageIndex, setPageIndex } =
+    props;
 
   const [selectedTrain, setSelectedTrain] = useState();
   const [selectedSeats, setSelectedSeats] = useState();
   const [coaches, setCoaches] = useState();
+  const [boughtTickets, setBoughtTickets] = useState();
+  const [showCheckoutDialog, setShowCheckoutDialog] = useState(false);
 
   const getCoachByTrain = (trainId) => {
     const coaches = trips
@@ -40,6 +47,15 @@ const Trip = (props) => {
       })
       .map((trip) => trip.MaTAU.toa)[0];
     setCoaches(coaches);
+  };
+
+  const handleRemoveSeat = (seat) => {
+    let idx = selectedSeats.findIndex((obj) => obj.id === seat.id);
+    if (idx > -1) {
+      let temp = [...selectedSeats];
+      temp.splice(idx, 1);
+      setSelectedSeats(temp);
+    }
   };
 
   useEffect(() => {
@@ -51,12 +67,52 @@ const Trip = (props) => {
     getCoachByTrain(selectedTrain);
   }, [selectedTrain]);
 
+  useEffect(() => {
+    PHIEUDATVE.layDanhSachPDV(trips[0].MACHUYENDI).then((res) => {
+      if (res.status === 200) {
+        setBoughtTickets(res.data);
+      }
+    });
+  }, []);
+
   return (
     <Box>
-      <BaseHeaderLayout title="Đặt vé" as="h1" />
+      <BaseHeaderLayout
+        title="Đặt vé"
+        as="h1"
+        navigationAction={
+          <Link
+            startIcon={<ArrowLeft />}
+            to="#"
+            onClick={() => {
+              let temp = [...pageIndex];
+              temp.pop();
+              setPageIndex(temp);
+            }}
+          >
+            Quay lại
+          </Link>
+        }
+      />
       <TwoColsLayout
         startCol={
           <Box style={{ paddingTop: "16px", paddingBottom: "16px" }}>
+            {trips && trips.length > 0 && (
+              <Box
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+
+                  marginBottom: "8px",
+                }}
+              >
+                <Typography style={{ fontSize: "24px", fontWeight: "bold" }}>
+                  {trips[0].GaDi.TenGa} ~ {trips[0].GaDen.TenGa}
+                </Typography>
+              </Box>
+            )}
+
             <RadioGroup
               onChange={(e) => setSelectedTrain(e.target.value)}
               value={selectedTrain}
@@ -110,7 +166,12 @@ const Trip = (props) => {
                             }}
                           >
                             <Typography>TG đi</Typography>
-                            <Typography>{trip.NgayDi}</Typography>
+                            <Typography>
+                              {trip.NgayDi}{" "}
+                              {trip.GioDi.split(":")[0] +
+                                ":" +
+                                trip.GioDi.split(":")[1]}
+                            </Typography>
                           </Box>
 
                           <Box
@@ -121,7 +182,12 @@ const Trip = (props) => {
                             }}
                           >
                             <Typography>TG đến</Typography>
-                            <Typography>{trip.NgayDen}</Typography>
+                            <Typography>
+                              {trip.NgayDen}{" "}
+                              {trip.GioDen.split(":")[0] +
+                                ":" +
+                                trip.GioDen.split(":")[1]}
+                            </Typography>
                           </Box>
                         </Box>
                       </Box>
@@ -145,6 +211,7 @@ const Trip = (props) => {
                       coach={coach}
                       from={fromStation}
                       to={toStation}
+                      boughtTickets={boughtTickets}
                       startDate={startDate}
                       selectedTrain={selectedTrain}
                       selectedSeats={selectedSeats}
@@ -168,47 +235,80 @@ const Trip = (props) => {
               </Typography>
             </Box>
 
-            <Box
-              style={{ display: "flex", flexDirection: "column", gap: "8px" }}
-            >
-              {selectedSeats &&
-                selectedSeats.map((seat) => {
-                  return (
-                    <Box
-                      key={seat.coachNo + seat.seatNo}
-                      style={{
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "space-between",
-                      }}
-                    >
+            <SimpleBar style={{ maxHeight: 512 }}>
+              <Box
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "8px",
+                }}
+              >
+                {selectedSeats &&
+                  selectedSeats.map((seat) => {
+                    return (
                       <Box
+                        key={seat.id}
                         style={{
                           display: "flex",
-                          flexDirection: "column",
-                          boxShadow: "none",
+                          alignItems: "center",
+                          justifyContent: "space-between",
                         }}
                       >
-                        <Typography>
-                          {seat.train} {seat.from}~{seat.to}
-                        </Typography>
+                        <Box
+                          style={{
+                            display: "flex",
+                            flexDirection: "column",
+                            boxShadow: "none",
+                          }}
+                        >
+                          <Typography>
+                            {seat.train} {seat.trip.from}~{seat.trip.to}
+                          </Typography>
 
-                        <Typography>
-                          {seat.startDay} {seat.startHour}
-                        </Typography>
+                          <Typography>
+                            {seat.startDay} {seat.startHour}
+                          </Typography>
 
-                        <Typography>
-                          Toa {seat.coachNo} Chỗ {seat.seatNo}
-                        </Typography>
+                          <Typography>
+                            Toa {seat.coach.no} Chỗ {seat.seat.no}
+                          </Typography>
+                        </Box>
+                        <IconButton
+                          onClick={() => handleRemoveSeat(seat)}
+                          icon={<Trash />}
+                        />
                       </Box>
-                      <IconButton
-                        // onClick={() => setCurrentAction("edit")}
-                        icon={<Trash />}
-                      />
-                    </Box>
-                  );
-                })}
+                    );
+                  })}
+              </Box>
+            </SimpleBar>
+
+            <Box
+              style={{
+                marginTop: "16px",
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
+              <Button
+                onClick={() => setShowCheckoutDialog(true)}
+                disabled={
+                  !selectedSeats ||
+                  (selectedSeats && selectedSeats.length === 0)
+                }
+              >
+                Thanh toán
+              </Button>
             </Box>
+
+            <Checkout
+              isVisible={showCheckoutDialog}
+              setIsVisible={setShowCheckoutDialog}
+              selectedSeats={selectedSeats}
+              setSelectedSeats={setSelectedSeats}
+              setBoughtTickets={setBoughtTickets}
+              trips={trips}
+            />
           </Box>
         }
       />

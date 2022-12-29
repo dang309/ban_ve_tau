@@ -16,24 +16,10 @@
       "relation": "oneToOne",
       "target": "plugin::tiny-train.hoadon"
     },
-    "MaTOA": {
+    "MaPDV": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "plugin::tiny-train.toa"
-    },
-    "MaKM": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "plugin::tiny-train.khuyenmai"
-    },
-    "TienPhaiTra": {
-      "type": "float"
-    },
-    "PhuPhi": {
-      "type": "integer"
-    },
-    "BaoHiem": {
-      "type": "integer"
+      "target": "plugin::tiny-train.phieudatve"
     }
   }
 }

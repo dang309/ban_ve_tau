@@ -24,7 +24,6 @@ const SearchTrip = (props) => {
   } = props;
   return (
     <Box>
-      <BaseHeaderLayout title="Tìm vé" as="h1" />
       <Box
         style={{
           backgroundImage: "url(https://vetau.com.vn/images/001.jpg)",

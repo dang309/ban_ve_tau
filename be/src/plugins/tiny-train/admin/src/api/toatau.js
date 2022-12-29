@@ -3,8 +3,8 @@ import axiosInstance from "../utils/axiosInstance";
 
 const TOATAU = {
   layDanhSachToaTau: async () => {
-    const data = await axiosInstance.get(`/tiny-train/toatau`);
-    return data;
+    const res = await axiosInstance.get(`/tiny-train/toatau`);
+    return res;
   },
 };
 export default TOATAU;

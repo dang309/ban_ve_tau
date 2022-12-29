@@ -7,6 +7,8 @@ import PluginIcon from "./components/PluginIcon";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+import "simplebar-react/dist/simplebar.min.css";
+
 const name = pluginPkg.strapi.name;
 
 export default {

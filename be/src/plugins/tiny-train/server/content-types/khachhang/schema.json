@@ -35,11 +35,10 @@
     "DoiTuong": {
       "type": "enumeration",
       "enum": [
-        "Người lớn",
-        "Trẻ em",
-        "Người cao tuổi"
-      ],
-      "default": "Người lớn"
+        "A",
+        "C",
+        "E"
+      ]
     }
   }
 }

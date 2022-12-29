@@ -16,5 +16,15 @@ module.exports = {
         auth: false,
       },
     },
+
+    {
+      method: "POST",
+      path: "/khachhang/create",
+      handler: "khachhang.create",
+      config: {
+        policies: [],
+        auth: false,
+      },
+    },
   ],
 };

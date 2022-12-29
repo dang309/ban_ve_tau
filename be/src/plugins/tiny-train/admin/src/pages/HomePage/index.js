@@ -9,13 +9,24 @@ import React, { useState, useEffect } from "react";
 import pluginId from "../../pluginId";
 import KHACHHANG from "../../api/khachhang";
 
-import { Box } from "@strapi/design-system";
+import {
+  Box,
+  Tabs,
+  Tab,
+  TabGroup,
+  TabPanels,
+  TabPanel,
+} from "@strapi/design-system";
 import GA from "../../api/ga";
 
 import SearchTrip from "./subpages/SearchTrip";
 import Trip from "./subpages/Trip";
 import CHUYENDI from "../../api/chuyendi";
 import TOATAU from "../../api/toatau";
+
+import moment from "moment";
+
+import { ReactNoti, notify, POSITION } from "react-noti";
 
 const HomePage = () => {
   const [stations, setStations] = useState([]);
@@ -64,11 +75,15 @@ const HomePage = () => {
                     },
                   };
                 });
+
                 setTrips(trips);
                 setPageIndex((prev) => [...prev, "trip"]);
               }
             }
           });
+        } else if (trips.length === 0) {
+          notify.error("Không có chuyến đi!");
+          return;
         }
       }
     });
@@ -76,6 +91,10 @@ const HomePage = () => {
 
   const handleSearchTrips = () => {
     if (!fromStation.length || !toStation.length || !startDate) return;
+    if (moment(startDate).diff(moment(), "days") < 0) {
+      notify.error("Ngày phải lớn hơn ngày hiện tại!");
+      return;
+    }
     getTrips();
   };
 
@@ -102,8 +121,12 @@ const HomePage = () => {
           fromStation={fromStation}
           toStation={toStation}
           startDate={startDate}
+          pageIndex={pageIndex}
+          setPageIndex={setPageIndex}
         />
       )}
+
+      <ReactNoti position={POSITION.TOP_CENTER} timeOut={10000} />
     </Box>
   );
 };

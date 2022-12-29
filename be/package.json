@@ -7,7 +7,8 @@
     "develop": "strapi develop",
     "start": "strapi start",
     "build": "strapi build",
-    "strapi": "strapi"
+    "strapi": "strapi",
+    "watch": "fuser -k 8000/tcp && yarn develop --watch-admin"
   },
   "devDependencies": {},
   "dependencies": {
@@ -19,9 +20,12 @@
     "moment": "^2.29.4",
     "mysql": "2.18.1",
     "qs": "^6.11.0",
+    "react-noti": "^1.0.0",
     "react-slick": "^0.29.0",
     "request": "^2.88.2",
-    "slick-carousel": "^1.8.1"
+    "simplebar-react": "^2.4.3",
+    "slick-carousel": "^1.8.1",
+    "styled-components": "5"
   },
   "author": {
     "name": "A Strapi developer"

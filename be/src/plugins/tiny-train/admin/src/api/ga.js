@@ -3,8 +3,8 @@ import axiosInstance from "../../src/utils/axiosInstance";
 
 const GA = {
   layDanhSachGa: async () => {
-    const data = await axiosInstance.get(`/tiny-train/ga`);
-    return data;
+    const res = await axiosInstance.get(`/tiny-train/ga`);
+    return res;
   },
 };
 export default GA;

@@ -17,11 +17,6 @@
       "relation": "oneToOne",
       "target": "admin::user"
     },
-    "MaKH": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "plugin::tiny-train.khachhang"
-    },
     "TongTien": {
       "type": "float"
     },
@@ -29,7 +24,7 @@
       "type": "date"
     },
     "MaHD": {
-      "type": "uid"
+      "type": "integer"
     }
   }
 }

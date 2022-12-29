@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "phieudatves",
+  "info": {
+    "singularName": "phieudatve",
+    "pluralName": "phieudatves",
+    "displayName": "PHIEUDATVE"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "MaPDV": {
+      "type": "integer"
+    },
+    "MaCHUYENDI": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::tiny-train.chuyendi"
+    },
+    "MaTOA": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::tiny-train.toa"
+    },
+    "MaKM": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::tiny-train.khuyenmai"
+    },
+    "MaKH": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::tiny-train.khachhang"
+    },
+    "SoThuTuGhe": {
+      "type": "integer"
+    },
+    "TienPhaiTra": {
+      "type": "float"
+    },
+    "DonGia": {
+      "type": "integer"
+    },
+    "PhuPhi": {
+      "type": "integer"
+    },
+    "BaoHiem": {
+      "type": "integer"
+    },
+    "TrangThai": {
+      "type": "boolean"
+    }
+  }
+}

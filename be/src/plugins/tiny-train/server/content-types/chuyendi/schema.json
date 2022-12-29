@@ -21,11 +21,17 @@
       "relation": "oneToOne",
       "target": "plugin::tiny-train.tau"
     },
-    "NgayGioDi": {
-      "type": "datetime"
+    "NgayDi": {
+      "type": "date"
     },
-    "NgayGioDen": {
-      "type": "datetime"
+    "NgayDen": {
+      "type": "date"
+    },
+    "GioDi": {
+      "type": "time"
+    },
+    "GioDen": {
+      "type": "time"
     },
     "GaDi": {
       "type": "relation",

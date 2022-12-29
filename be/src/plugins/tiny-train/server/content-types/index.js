@@ -10,6 +10,7 @@ const khuyenmai = require("./khuyenmai");
 const tau = require("./tau");
 const toa = require("./toa");
 const toatau = require("./toatau");
+const phieudatve = require("./phieudatve");
 module.exports = {
   chuyendi,
   cthoadon,
@@ -21,4 +22,5 @@ module.exports = {
   tau,
   toa,
   toatau,
+  phieudatve,
 };

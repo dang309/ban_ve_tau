@@ -21,7 +21,15 @@
       "relation": "oneToOne",
       "target": "plugin::tiny-train.tau"
     },
+    "MaGHE": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::tiny-train.ghe"
+    },
     "SoThuTu": {
+      "type": "integer"
+    },
+    "Gia": {
       "type": "integer"
     }
   }

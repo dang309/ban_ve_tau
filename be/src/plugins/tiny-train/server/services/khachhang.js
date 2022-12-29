@@ -7,4 +7,10 @@ module.exports = ({ strapi }) => ({
       query
     );
   },
+
+  async create(data) {
+    return await strapi.entityService.create("plugin::tiny-train.khachhang", {
+      data,
+    });
+  },
 });
