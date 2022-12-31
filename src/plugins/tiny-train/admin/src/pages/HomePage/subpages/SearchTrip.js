@@ -26,7 +26,8 @@ const SearchTrip = (props) => {
     <Box>
       <Box
         style={{
-          backgroundImage: "url(/uploads/001_c14c489e3e.jpg)",
+          backgroundImage:
+            "url(https://storage.googleapis.com/uit-k14/001.jpg)",
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
           backgroundPosition: "center",
