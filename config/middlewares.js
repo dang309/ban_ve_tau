@@ -7,18 +7,8 @@ module.exports = [
         useDefaults: true,
         directives: {
           "connect-src": ["'self'", "https:"],
-          "img-src": [
-            "'self'",
-            "data:",
-            "blob:",
-            `https://storage.googleapis.com/uit-k14`,
-          ],
-          "media-src": [
-            "'self'",
-            "data:",
-            "blob:",
-            `https://storage.googleapis.com/uit-k14`,
-          ],
+          "img-src": ["'self'", "data:", "blob:", `storage.googleapis.com`],
+          "media-src": ["'self'", "data:", "blob:", `storage.googleapis.com`],
           upgradeInsecureRequests: null,
         },
       },
