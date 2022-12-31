@@ -6,7 +6,7 @@
   "main": "./src/index.js",
   "scripts": {
     "develop": "strapi develop",
-    "start": "strapi start",
+    "start": "pm2 start server.js",
     "build": "strapi build",
     "strapi": "strapi",
     "watch": "fuser -k 8000/tcp && yarn develop --watch-admin"
