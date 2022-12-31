@@ -26,27 +26,20 @@ const SearchTrip = (props) => {
     <Box>
       <Box
         style={{
+          backgroundImage:
+            "url(https://storage.googleapis.com/uit-k14/001.jpg)",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+
           height: "512px",
           width: "100%",
 
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-
-          position: "relative",
         }}
       >
-        <img
-          src="https://storage.googleapis.com/uit-k14/001.jpg"
-          alt=""
-          style={{
-            width: "100%",
-            height: "100%",
-            position: "absolute",
-            top: 0,
-            left: 0,
-          }}
-        />
         <Grid
           gap={2}
           style={{ backgroundColor: "#5454548f", borderRadius: "16px" }}
