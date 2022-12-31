@@ -7,6 +7,7 @@
   "scripts": {
     "develop": "strapi develop",
     "start": "pm2 start server.js",
+    "restart": "pm2 restart server.js",
     "build": "strapi build",
     "strapi": "strapi",
     "watch": "fuser -k 8000/tcp && yarn develop --watch-admin"
