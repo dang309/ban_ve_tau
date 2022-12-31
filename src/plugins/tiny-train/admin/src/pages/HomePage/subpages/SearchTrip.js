@@ -26,7 +26,7 @@ const SearchTrip = (props) => {
     <Box>
       <Box
         style={{
-          backgroundImage: "url(https://vetau.com.vn/images/001.jpg)",
+          backgroundImage: "url(/uploads/001_c14c489e3e.jpg)",
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
           backgroundPosition: "center",
