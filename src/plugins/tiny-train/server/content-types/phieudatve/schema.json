@@ -4,7 +4,8 @@
   "info": {
     "singularName": "phieudatve",
     "pluralName": "phieudatves",
-    "displayName": "PHIEUDATVE"
+    "displayName": "Quản lý vé",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false

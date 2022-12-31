@@ -7,8 +7,6 @@ module.exports = ({ env }) => ({
       database: env("DATABASE_NAME", "BANVETAUTRUCTUYEN"),
       user: env("DATABASE_USERNAME", "root"),
       password: env("DATABASE_PASSWORD", "TerMiNaTor_309"),
-      ssl: env.bool("DATABASE_SSL", true),
-      socketPath: `/cloudsql/northern-math-370107:asia-southeast1:uit`,
     },
   },
 });

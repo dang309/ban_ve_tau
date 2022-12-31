@@ -4,7 +4,7 @@
   "info": {
     "singularName": "toatau",
     "pluralName": "toataus",
-    "displayName": "TOATAU"
+    "displayName": "Quản lý toa tàu"
   },
   "options": {
     "draftAndPublish": false
